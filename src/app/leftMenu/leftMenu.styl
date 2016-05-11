@@ -1,0 +1,140 @@
+left-menu
+  height: 100%
+  width: 300px
+  margin: 0 15px 0 50px;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 2px 1px -1px rgba(0,0,0,.12);
+  background #fff
+
+.left-list
+  //border 1px solid #ddd
+  height: 100%
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  &__search
+    padding 5px
+    position relative
+
+    input
+      border-radius 25px
+
+    .search__btn
+      display: block;
+      position: absolute;
+      top: 5px;
+      right: 10px;
+      padding: 10px;
+
+  &__item
+    cursor pointer
+    padding 5px
+    position relative
+    font-size 14px
+
+    & + &
+      border-top 1px solid #eee
+
+    &:hover
+      background #eee
+
+    &.current
+      background #2196F3
+      color: #fff
+
+      .left-list__item__tx
+        color: #fff
+
+
+    $size = 14px
+    $top = 9px
+    &.current:after
+      content ''
+      position absolute
+      right: -1px
+      top: $top
+      width: 0px;
+      height: 0px;
+      border-top: $size solid transparent;
+      border-bottom: $size solid transparent;
+      border-right: $size solid #fff;
+
+    &.current:before
+      content ''
+      position absolute
+      right: 0px
+      top: $top
+      width: 0px;
+      height: 0px;
+      border-top: $size solid transparent;
+      border-bottom: $size solid transparent;
+      border-right: $size solid #ddd;
+
+    &__name
+      //vertical-align top
+      display inline-block
+      //padding 10px 10px
+
+    &__tx
+      color #999
+      text-overflow ellipsis
+      overflow hidden
+      white-space pre
+      font-size 12px
+
+    &__status
+      position absolute
+      left 8px
+      top 5px
+      color: #ddd
+
+      .online &
+        color: #00C853
+
+    .round-photo
+      width: 36px
+
+    &.new-message
+      animation blink 2s infinite;
+
+
+.wait-handle
+  padding: 10px
+  font-size 14px
+  margin-bottom 15px
+  border-bottom 1px solid #eee
+  position relative
+  font-weight normal
+
+//.divider
+//  &:after
+//    display inline-block
+//    content 'Сообщения'
+//    position absolute
+//    color #999
+//    padding 0 5px
+//    background #fff
+//    font-size 11px
+//    left 50%
+//    margin-left -40px
+//    bottom -7px
+//    z-index 100
+
+@keyframes blink {
+  0% {
+    background #FFE0B2
+  }
+  50% {
+    background transparent
+  }
+  100% {
+    background #FFE0B2
+  }
+}
+
+.divider
+  font-size 12px
+  color: #555
+  &:after
+    border-bottom 1px solid #ddd
+    padding-bottom 10px
+    margin-bottom 10px

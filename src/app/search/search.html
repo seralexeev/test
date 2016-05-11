@@ -1,0 +1,53 @@
+<div class="search">
+    <div class="container-fluid" style="margin-bottom: 10px">
+        <form class="form-inline">
+            <div class="form-group">
+                <input type="email" class="form-control"  placeholder="ID">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" placeholder="Номер заявки">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control"  placeholder="Логин">
+            </div>
+
+            <div class="form-group">
+                <input type="password" class="form-control" placeholder="Почта">
+            </div>
+
+            <div class="form-group">
+                <input type="password" class="form-control"  placeholder="Телефон">
+            </div>
+        </form>
+        <div class="clearfix">
+            <a href ng-click="close()" class="search__close"> <i class="fa fa-close"></i></a>
+        </div>
+    </div>
+    <div ng-repeat="item in getResults()">
+        <div class="media search__result" ng-click="setCurrentAndClose(item)">
+            <div class="container">
+
+                <div class="media-left">
+                    <div class="round-photo" ng-style="{'background-image':'url({{item.info.photo}})'}"></div>
+                </div>
+                <div class="media-body">
+                    <div class="clearfix">
+                        <span ng-bind="item.user"></span>
+                        <div class="pull-right">
+                            <span class="mess__info">
+                                <i class="fa fa-envelope-o"></i> &nbsp;<span class="text-muted"
+                                                                             ng-bind="item.messages.length"></span>
+                            </span>
+                            <span class="mess__info">
+                                <i class="fa fa-pencil"></i> &nbsp;<span ng-bind="item.theme"></span>
+                            </span>
+                        </div>
+
+                    </div>
+                    <div class="left-list__item__tx" ng-bind="item.messages[0].text"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

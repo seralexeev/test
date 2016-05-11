@@ -1,0 +1,180 @@
+<div class="chat" ng-if="getCurrent()">
+    <div class="dubls">
+        <div class="dubl" style="text-align: center; font-weight: bold; border-bottom: 0; padding: 11px 0">
+            <span>Активный чат</span>
+        </div>
+        <div class="dubl" ng-repeat="dubl in dubls">
+            <div class="clearfix">
+                <small>
+                    <i class="fa fa-calendar text-muted" aria-hidden="true"></i>&nbsp;
+                    <span ng-bind="dubl.date | date:'HH:mm yyyy-MM-dd'">
+
+                    </span>
+                </small>
+                <!--<small class="pull-right" ng-bind="dubl.theme"></small>-->
+            </div>
+            <small class="text-muted" ng-bind="dubl.title"></small>
+        </div>
+        <div class="dubl" style="flex-shrink: 0;flex: 0;padding: 5px 10px;">
+            <span>...</span>
+        </div>
+    </div>
+
+    <div class="chat-area">
+        <div class="clearfix" ng-repeat="m in getCurrent().messages">
+            <div class="chat-message" ng-class="getCssClass(m)"
+                 ng-if="m.type === 'FROM_USER' || m.type === 'FROM_SUPPORT'">
+                <div class="media">
+                    <div class="media-left" ng-if="m.type === 'FROM_USER'">
+                        <div class="round-photo" ng-style="{'background-image':'url({{getCurrent().info.photo}})'}"></div>
+                    </div>
+                    <div class="media-body">
+                        <div class="media-heading clearfix">
+                            <a href class="author" ng-bind="m.author"></a>
+                            <small class="date">
+                                <i class="fa fa-calendar" aria-hidden="true"></i>
+                                <span ng-bind="getDate() | date:'HH:mm:ss yyyy-MM-dd'"></span>
+                            </small>
+                        </div>
+                        <div ng-bind="m.text"></div>
+                        <div ng-if="m.attachments" class="attachments">
+                            <a href class="attachment" ng-repeat="at in m.attachments"
+                               ng-style="{'background-image':'url({{at}})'}">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="media-right" ng-if="m.type === 'FROM_SUPPORT'">
+                        <div class="round-photo"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="chat-message" ng-if="m.type === 'NOTE'" ng-class="getCssClass(m)">
+                <div class="media">
+                    <div class="media-left">
+                        <div class="round-photo"></div>
+                    </div>
+                    <div class="media-body">
+                        <div class="media-heading clearfix">
+                            <span ng-bind="m.author"></span>
+                            <small ng-bind="getDate() | date:'HH:mm:ss yyyy-MM-dd'"></small>
+                            <div class="pull-right">
+                                <i class="fa fa-comment" aria-hidden="true"></i> Заметка
+                            </div>
+                        </div>
+                        <div ng-bind="m.text"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="chat-message message-note" ng-if="m.type === 'AGGREGATOR_MTS'">
+                <div class="media">
+                    <div class="media-left">
+                        <div class="round-photo"></div>
+                    </div>
+                    <div class="media-body">
+                        <div class="media-heading clearfix">
+                            <span ng-bind="m.author"></span>
+                            <small ng-bind="getDate() | date:'HH:MM'"></small>
+                            <div class="pull-right">
+                                <i class="fa fa-reply-all" aria-hidden="true"></i> Запрос
+                            </div>
+                        </div>
+                        <div ng-bind="m.text"></div>
+                    </div>
+                    <div class="media-left" style="padding: 0 5px">
+                        <img width="100" src="https://upload.wikimedia.org/wikipedia/commons/c/c2/MTS_logo.svg"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="top__actions">
+        <div class="top__action">
+            <i class="fa fa-reply text-info" aria-hidden="true"></i> &nbsp;Передать
+        </div>
+        <div class="top__action">
+            <i class="fa fa-pause text-warning" aria-hidden="true"></i> &nbsp;На ожидание
+        </div>
+        <div class="top__action">
+            <i class="fa fa-close text-danger" aria-hidden="true"></i> &nbsp;Закрыть
+        </div>
+    </div>
+    <form class="send-message" ng-submit="addMessage()">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Введите сообщение" ng-model="model.text">
+            <span class="input-group-btn">
+                <button ng-click="addMessage()" class="btn btn-default" type="button"><i class="fa fa-envelope-o" aria-hidden="true"></i>
+                    Отправть
+                </button>
+            </span>
+        </div>
+        <div class="send-message__icons">
+            <a href>
+                <i class="fa fa-smile-o" aria-hidden="true"></i>
+            </a>
+            <a href>
+                <i class="fa fa-paperclip" aria-hidden="true"></i>
+            </a>
+        </div>
+    </form>
+</div>
+<div class="info" ng-if="getCurrent()">
+    <div class="main clearfix">
+        <div class="photo pull-left" ng-style="{'background-image':'url({{ getCurrent().info.photo }})'}"></div>
+        <div class="main__info">
+            <table class="table table-condensed table-hover table-striped">
+                <tbody>
+                <tr>
+                    <td>ID:</td>
+                    <td><strong ng-bind="getCurrent().info.id"></strong></td>
+                    <td>Логин:</td>
+                    <td><strong ng-bind="getCurrent().info.login"></strong></td>
+                </tr>
+
+                <tr>
+                    <td>Email:</td>
+                    <td><strong ng-bind="getCurrent().info.email"></strong></td>
+                    <td>Телефон:</td>
+                    <td><strong ng-bind="getCurrent().info.phone"></strong></td>
+                </tr>
+
+                <tr>
+                    <td>Возраст:</td>
+                    <td><strong ng-bind="getCurrent().info.age"></strong></td>
+                    <td>Город:</td>
+                    <td><strong ng-bind="getCurrent().info.city"></strong></td>
+                </tr>
+
+                <tr>
+                    <td>Зарегистрирован:</td>
+                    <td><strong ng-bind="getCurrent().info.created | date:'HH:mm:ss yyyy-MM-dd'"></strong></td>
+                    <td>Купленных ОКов:</td>
+                    <td><strong ng-bind="getCurrent().info.oks"></strong></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <pre style="padding: 5px 10px; margin-top: 25px; overflow: hidden; text-overflow: ellipsis" ng-bind="getCurrent().info.userAgent"></pre>
+
+        <div style="margin-top: 10px">
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href>Все прикрепления</a></li>
+                <li role="presentation"><a href>Подробная информация</a></li>
+            </ul>
+
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="home">
+                    <div ng-repeat="m in getCurrent().messages" class="attachments">
+                        <a href class="attachment" ng-repeat="at in m.attachments"
+                           ng-style="{'background-image':'url({{at}})'}">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="select-chat" ng-if="!getCurrent()">
+    Выберите чатик
+</div>

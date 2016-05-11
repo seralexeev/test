@@ -1,0 +1,24 @@
+{
+  "js": {
+    "vendor": [
+      "node_modules/angular/angular.min.js",
+      "node_modules/angular-animate/angular-animate.min.js"
+    ],
+    "app": [
+      "src/app/src/app.core.js",
+      "src/app/**/!(app.core.js|native.js)*.js"
+    ]
+  },
+  "css": {
+    "vendor": [
+      "node_modules/font-awesome/css/font-awesome.min.css",
+      "node_modules/bootstrap/dist/css/bootstrap.min.css"
+    ],
+    "app": [
+      "src/**/*.styl"
+    ]
+  },
+  "fonts": [
+    "node_modules/font-awesome/fonts/*.*"
+  ]
+}
