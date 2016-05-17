@@ -2,8 +2,8 @@
     <div class="container-fluid">
         <nav id="bs-navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li><a href>Чатик</a></li>
-                <li><a href ng-click="openUsers()"><i class="fa fa-history" aria-hidden="true"></i>&nbsp; История чатов</a></li>
+                <li><a href ng-hide="offline">Чатик</a></li>
+                <li ng-show="offline"><a href><i class="fa fa-history" aria-hidden="true"></i>&nbsp; История чатов</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li>
@@ -18,7 +18,14 @@
                     </form>
                 </li>
                 <li>
-                    <p class="navbar-text">Петров Николай</p>
+                    <p class="navbar-text">Петров Николай
+                        &nbsp;
+                        &nbsp;
+                        <a href ng-click="toggleOnline()">
+                            <span ng-show="offline" class="text-muted"><i class="fa fa-toggle-off" aria-hidden="true"></i> Offline</span>
+                            <span ng-hide="offline"><i class="fa fa-toggle-on" style="color: #4CAF50" aria-hidden="true"></i> Online</span>
+                        </a>
+                    </p>
                 </li>
                 <li>
                     <a href class="main-header__profile">
