@@ -53,7 +53,7 @@
     </div>
 </div>
 
-<div class="wait" ng-class="waiteIsVisible && '__w-visible'">
+<div class="wait" ng-class="waiteIsVisible && '__w-visible'" ng-if="!offline">
     <button class="wait_btn" ng-click="toggleWait()">
         <i class="fa fa-angle-up" ng-hide="waiteIsVisible" aria-hidden="true"></i>
         <i class="fa fa-angle-down" ng-show="waiteIsVisible" aria-hidden="true"></i>&nbsp;
