@@ -1,6 +1,7 @@
 <main-header></main-header>
 <div class="main-content">
     <user-list ng-if="userOpen"></user-list>
-    <left-menu></left-menu>
-    <ticket></ticket>
+    <left-menu ng-if="!sotrudniki"></left-menu>
+    <ticket ng-if="!sotrudniki"></ticket>
+    <sotr ng-if="sotrudniki"></sotr>
 </div>

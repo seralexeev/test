@@ -5,6 +5,11 @@
     <a href="" class="search__btn"><i class="fa fa-search"></i></a>
 </div>
 <div class="left-list">
+    <a href class="left-list__item--add" ng-show="sotrudniki">
+        <div>
+            <i class="fa fa-plus" aria-hidden="true"></i>&nbsp; Добавить нового
+        </div>
+    </a>
     <div class="left-list__item" ng-repeat="item in items" ng-class="$first && '__current'">
         <div class="media">
             <div class="media-left">
