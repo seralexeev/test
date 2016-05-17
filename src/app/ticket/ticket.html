@@ -26,7 +26,8 @@
                  ng-if="m.type === 'FROM_USER' || m.type === 'FROM_SUPPORT'">
                 <div class="media">
                     <div class="media-left" ng-if="m.type === 'FROM_USER'">
-                        <div class="round-photo" ng-style="{'background-image':'url({{getCurrent().info.photo}})'}"></div>
+                        <div class="round-photo"
+                             ng-style="{'background-image':'url({{getCurrent().info.photo}})'}"></div>
                     </div>
                     <div class="media-body">
                         <div class="media-heading clearfix">
@@ -102,7 +103,8 @@
         <div class="input-group">
             <input type="text" class="form-control" placeholder="Введите сообщение" ng-model="model.text">
             <span class="input-group-btn">
-                <button ng-click="addMessage()" class="btn btn-default" type="button"><i class="fa fa-envelope-o" aria-hidden="true"></i>
+                <button ng-click="addMessage()" class="btn btn-default" type="button"><i class="fa fa-envelope-o"
+                                                                                         aria-hidden="true"></i>
                     Отправть
                 </button>
             </span>
@@ -150,10 +152,26 @@
                     <td>Купленных ОКов:</td>
                     <td><strong ng-bind="getCurrent().info.oks"></strong></td>
                 </tr>
+                <tr>
+                    <td>Браузер</td>
+                    <td><strong>Chrome</strong></td>
+                    <td>Версия</td>
+                    <td><strong>43</strong></td>
+                </tr>
+
+                <tr>
+                    <td>Устройство:</td>
+                    <td><strong>Не определено</strong></td>
+                    <td>ОС:</td>
+                    <td><strong>OSX 10.11</strong></td>
+                </tr>
                 </tbody>
             </table>
+
         </div>
-        <pre style="padding: 5px 10px; margin-top: 25px; overflow: hidden; text-overflow: ellipsis" ng-bind="getCurrent().info.userAgent"></pre>
+
+        <pre style="padding: 5px 10px; overflow: hidden; text-overflow: ellipsis"
+             ng-bind="getCurrent().info.userAgent"></pre>
 
         <div style="margin-top: 10px">
             <ul class="nav nav-tabs" role="tablist">

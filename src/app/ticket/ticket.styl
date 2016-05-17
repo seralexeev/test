@@ -32,12 +32,14 @@ ticket
 
     .photo
       display inline-block
-      width: 100px
-      height: 150px
+      width: 128px;
+      height: 175px;
       background: url('http://petzilla.ru/sites/default/files/styles/large/public/field/image/poroda-britanec.jpg') 100% 100% no-repeat
       background-size: cover
-      margin-right 10px
       background-position center
+      border-radius 3px
+      border-top-right-radius: 0;
+      border: 1px solid #ddd
 
 .dubls
   display flex
@@ -66,7 +68,7 @@ ticket
   top: 40px;
   left: 0;
   right: 0;
-  z-index: 999;
+  z-index: 1;
   background: rgba(255, 255, 255, 0.95);
   border-bottom: 1px solid #ddd;
 
@@ -132,10 +134,12 @@ $size = 10px
 
 
 .message-note
-  margin: 0 auto 20px;
-  max-width: 60%;
-  border-radius: 3px;
-  font-size 12px
+  margin: 10px auto
+  padding: 10px
+  border-radius: 10px
+  font-size: 12px
+  border: 2px solid #ddd
+  background: #eee
 
   .media-body
     width: 1000000px

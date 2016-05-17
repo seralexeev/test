@@ -1,8 +1,63 @@
+<div class="list__title">Чатики</div>
+
 <div class="left-list__search">
-    <input type="text" class="form-control search__input">
+    <input type="text" class="form-control search__input" ng-focus="openSearch()" ng-blur="openSearch()">
     <a href="" class="search__btn"><i class="fa fa-search"></i></a>
+
+    <div class="serach_add" ng-show="search">
+        <div class="form-group form-group--two">
+            <input type="text" class="form-control" placeholder="С" value="12.04.2016">
+            <i class="fa fa-calendar" style="    position: absolute;
+    left: 10px;
+    top: 10px;"></i>
+            <input type="text" class="form-control" placeholder="По" value="14.04.2016">
+            <i class="fa fa-calendar" style="    position: absolute;
+    left: 133px;
+    top: 10px;"></i>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="ID">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Номер заявки">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Логин">
+        </div>
+
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Почта">
+        </div>
+    </div>
 </div>
+
 <div class="left-list">
+    <div class="left-list__item" ng-repeat="item in items" ng-class="item === getCurrent() && '__current'"
+         ng-click="setCurrent(item)">
+        <div class="media">
+            <div class="media-left">
+                <div class="round-photo" ng-style="{'background-image':'url({{item.info.photo}})'}"></div>
+            </div>
+            <div class="media-body">
+                <div>
+                    <span ng-bind="item.user"></span>
+                </div>
+                <div class="left-list__item__tx" ng-bind="item.messages[item.messages.length - 1].text"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="wait" ng-class="waiteIsVisible && '__w-visible'">
+    <button class="wait_btn" ng-click="toggleWait()">
+        <i class="fa fa-angle-up" ng-hide="waiteIsVisible" aria-hidden="true"></i>
+        <i class="fa fa-angle-down" ng-show="waiteIsVisible" aria-hidden="true"></i>&nbsp;
+        В ожидании (3)
+    </button>
+    <div class="left-list__search">
+        <input type="text" class="form-control search__input">
+        <a href="" class="search__btn"><i class="fa fa-search"></i></a>
+    </div>
     <div class="left-list__item" ng-repeat="item in items" ng-class="item.cssClass" ng-click="setCurrent(item)">
         <div class="media">
             <div class="media-left">

@@ -1,0 +1,22 @@
+
+<div class="list__title">Пользователи</div>
+<div class="left-list__search">
+    <input type="text" class="form-control search__input">
+    <a href="" class="search__btn"><i class="fa fa-search"></i></a>
+</div>
+<div class="left-list">
+    <div class="left-list__item" ng-repeat="item in items" ng-class="$first && '__current'">
+        <div class="media">
+            <div class="media-left">
+                <div class="round-photo" ng-style="{'background-image':'url({{item.img}})'}"></div>
+            </div>
+            <div class="media-body">
+                <div>
+                    <span ng-bind="item.name"></span>
+                </div>
+                <div class="left-list__item__tx" ng-bind="'Чатов: ' + item.count">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

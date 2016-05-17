@@ -10,6 +10,13 @@ angular.module('app')
                     { title: 'У меня проблема...', date: new Date(), theme: 'Платежка' },
                 ];
 
+                var parser = new UAParser();
+                var uastring = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.2 (KHTML, like Gecko) Ubuntu/11.10 Chromium/15.0.874.106 Chrome/15.0.874.106 Safari/535.2";
+                parser.setUA(uastring);
+
+                var result = parser.getResult();
+                console.log(result);
+
                 var date = new Date();
 
                 scope.getDate = function(){
