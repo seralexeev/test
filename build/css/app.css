@@ -168,64 +168,6 @@ app {
   border-radius: 0;
 }
 
-main-header {
-  display: block;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 10;
-  border-bottom: 1px solid #ddd;
-}
-main-header .navbar {
-  background: #fff;
-}
-.main-header__links {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.main-header__links li {
-  display: inline-block;
-  vertical-align: middle;
-}
-.main-header__links a {
-  display: block;
-  text-decoration: none;
-  padding: 15px 20px;
-}
-.main-header__links a:hover {
-  background: #eee;
-}
-.main-header__links a:hover {
-  background: transparent;
-}
-.main-header__links a i {
-  color: #ddd;
-}
-.main-header__links a input {
-  border: 1px solid #ddd;
-  line-height: 1.5;
-}
-.main-header__search .search__input {
-  border-radius: 50px;
-  box-shadow: none;
-}
-.main-header__search .search__input:focus {
-  background: #fff;
-  width: 300px;
-}
-.main-header__search .search__btn {
-  display: block;
-  position: absolute;
-  top: 8px;
-  right: 15px;
-  padding: 10px;
-}
-a.main-header__profile {
-  padding: 7px !important;
-}
-
 left-menu {
   height: 100%;
   width: 300px;
@@ -428,6 +370,64 @@ left-menu {
   100% {
     background: #ffe0b2;
   }
+}
+
+main-header {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  border-bottom: 1px solid #ddd;
+}
+main-header .navbar {
+  background: #fff;
+}
+.main-header__links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.main-header__links li {
+  display: inline-block;
+  vertical-align: middle;
+}
+.main-header__links a {
+  display: block;
+  text-decoration: none;
+  padding: 15px 20px;
+}
+.main-header__links a:hover {
+  background: #eee;
+}
+.main-header__links a:hover {
+  background: transparent;
+}
+.main-header__links a i {
+  color: #ddd;
+}
+.main-header__links a input {
+  border: 1px solid #ddd;
+  line-height: 1.5;
+}
+.main-header__search .search__input {
+  border-radius: 50px;
+  box-shadow: none;
+}
+.main-header__search .search__input:focus {
+  background: #fff;
+  width: 300px;
+}
+.main-header__search .search__btn {
+  display: block;
+  position: absolute;
+  top: 8px;
+  right: 15px;
+  padding: 10px;
+}
+a.main-header__profile {
+  padding: 7px !important;
 }
 
 .search {
