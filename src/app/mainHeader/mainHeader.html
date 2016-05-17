@@ -6,6 +6,7 @@
                 <li ng-show="offline"><a href ng-class="history && 'active'" ng-click="showHistory()"><i class="fa fa-history" aria-hidden="true"></i>&nbsp; История чатов</a></li>
                 <li ng-show="offline"><a href ng-class="sotrudniki && 'active'" ng-click="showSotrudniki()"><i class="fa fa-users" aria-hidden="true"></i>&nbsp; Сотрудники</a></li>
             </ul>
+
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <form class="navbar-form main-header__search" role="search">
@@ -34,6 +35,9 @@
                         <i class="fa fa-caret-down" style="position: absolute; right: 8px; top: 20px"></i>
                     </a>
                 </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right" ng-show="offline">
+                <li><a href ng-class="settings && 'active'" ng-click="showSettings()"><i class="fa fa-cogs" aria-hidden="true"></i>&nbsp; Настройки</a></li>
             </ul>
         </nav>
     </div>

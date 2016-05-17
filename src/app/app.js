@@ -10,13 +10,22 @@ angular.module('app', ['ngPhotoswipe'])
                 }
 
                 $rootScope.showSotrudniki = function(){
+                    $rootScope.settings = false;
                     $rootScope.sotrudniki = true;
-                    $rootScope.history = !$rootScope.sotrudniki;
+                    $rootScope.history = false;
                 }
 
                 $rootScope.showHistory = function(){
+                    $rootScope.settings = false;
+                    $rootScope.sotrudniki = false;
                     $rootScope.history = true;
-                    $rootScope.sotrudniki = !$rootScope.history;
+                }
+
+                $rootScope.showSettings = function(){
+                    $rootScope.settings = true;
+                    $rootScope.sotrudniki = false;
+                    $rootScope.history = false;
+
                 }
 
                 $rootScope.showHistory()

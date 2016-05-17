@@ -1,7 +1,8 @@
 <main-header></main-header>
 <div class="main-content">
-    <user-list ng-if="userOpen"></user-list>
-    <left-menu ng-if="!sotrudniki"></left-menu>
-    <ticket ng-if="!sotrudniki"></ticket>
-    <sotr ng-if="sotrudniki"></sotr>
+    <user-list ng-if="userOpen && !settings"></user-list>
+    <left-menu ng-if="!sotrudniki && !settings"></left-menu>
+    <ticket ng-if="!sotrudniki && !settings"></ticket>
+    <sotr ng-if="sotrudniki && !settings"></sotr>
+    <div ng-if="settings" ng-include="'sotr/settings.html'" style="width: 100%; padding: 0 50px;"></div>
 </div>
