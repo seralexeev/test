@@ -28,6 +28,8 @@ angular.module('app', ['ngPhotoswipe'])
 
                 }
 
+                $rootScope.theme = 'theme--default';
+
                 $rootScope.showHistory()
             }
         }

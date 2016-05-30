@@ -175,6 +175,66 @@ a:focus {
 .navbar-nav a.active {
   background: #eee !important;
 }
+body.theme--theme1 {
+  background-color: #fdf5e6;
+}
+.theme--theme1 .message-right .media-body {
+  background-color: #ffdead;
+}
+.theme--theme1 .message-right .media-body:after {
+  border-left-color: #ffdead;
+}
+.theme--theme1 .message-left .media-body {
+  background-color: #b4eeb4;
+}
+.theme--theme1 .message-left .date:after {
+  border-right-color: #b4eeb4;
+}
+.theme--theme1__icon i {
+  color: #ffdead;
+  border-radius: 50%;
+  background-color: #fdf5e6;
+}
+body.theme--theme2 {
+  background-color: #d3d3d3;
+}
+.theme--theme2 .message-right .media-body {
+  background-color: #eee5de;
+}
+.theme--theme2 .message-right .media-body:after {
+  border-left-color: #eee5de;
+}
+.theme--theme2 .message-left .media-body {
+  background-color: #fff5ee;
+}
+.theme--theme2 .message-left .date:after {
+  border-right-color: #fff5ee;
+}
+.theme--theme2__icon i {
+  color: #eee5de;
+  border-radius: 50%;
+  background-color: #d3d3d3;
+}
+body.theme--theme3 {
+  background-color: #f8f8ff;
+}
+.theme--theme3 .message-right .media-body {
+  background-color: #add8e6;
+}
+.theme--theme3 .message-right .media-body:after {
+  border-left-color: #add8e6;
+}
+.theme--theme3 .message-left .media-body {
+  background-color: #eed2ee;
+}
+.theme--theme3 .message-left .date:after {
+  border-right-color: #eed2ee;
+}
+.theme--theme3__icon i {
+  color: #add8e6;
+  border-radius: 50%;
+  background-color: #eed2ee;
+}
 
 left-menu {
   height: 100%;
@@ -380,34 +440,6 @@ left-menu {
   }
 }
 
-.search {
-  border: 1px solid #ddd;
-  padding: 10px 0;
-  position: fixed;
-  top: 50;
-  left: 0;
-  right: 0;
-  background: #fff;
-  z-index: 99999;
-  box-shadow: 0 9px 11px -5px rgba(0,0,0,0.2), 0 18px 28px 2px rgba(0,0,0,0.14), 0 7px 34px 6px rgba(0,0,0,0.12);
-}
-.search__result {
-  padding: 5px 10px;
-  cursor: pointer;
-}
-.search__result:hover {
-  background: #eee;
-}
-.mess__info {
-  margin-right: 15px;
-}
-.search__close {
-  font-size: 18px;
-  position: absolute;
-  top: 10;
-  right: 10;
-}
-
 main-header {
   display: block;
   position: fixed;
@@ -464,6 +496,34 @@ main-header .navbar {
 }
 a.main-header__profile {
   padding: 7px !important;
+}
+
+.search {
+  border: 1px solid #ddd;
+  padding: 10px 0;
+  position: fixed;
+  top: 50;
+  left: 0;
+  right: 0;
+  background: #fff;
+  z-index: 99999;
+  box-shadow: 0 9px 11px -5px rgba(0,0,0,0.2), 0 18px 28px 2px rgba(0,0,0,0.14), 0 7px 34px 6px rgba(0,0,0,0.12);
+}
+.search__result {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.search__result:hover {
+  background: #eee;
+}
+.mess__info {
+  margin-right: 15px;
+}
+.search__close {
+  font-size: 18px;
+  position: absolute;
+  top: 10;
+  right: 10;
 }
 
 sotr {
