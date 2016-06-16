@@ -727,10 +727,15 @@ ticket {
   padding: 10px;
   border-radius: 10px;
   font-size: 12px;
+  max-width: 100%;
+  background-color: #bebebe;
+  background: rgba(0,0,0,0.1);
+  color: #000;
 }
 .message-note .media-body {
   width: 1000000px;
   min-width: auto;
+  text-align: center;
 }
 .message-note .media-left {
   vertical-align: middle;
