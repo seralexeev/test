@@ -158,7 +158,7 @@ app {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: url("http://petzilla.ru/sites/default/files/styles/large/public/field/image/poroda-britanec.jpg") 100% 100% no-repeat;
+  background: url("http://cdn.grumpycats.com/wp-content/uploads/2016/02/12654647_974282002607537_7798179861389974677_n-758x758.jpg") 100% 100% no-repeat;
   background-size: cover;
   display: inline-block;
   background-position: center;
@@ -179,17 +179,22 @@ body.theme--theme1 {
   background-color: #fdf5e6;
 }
 .theme--theme1 .message-right .media-body {
-  background-color: #ffdead;
+  background-color: #fff;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.07);
+  overflow: visible;
+  color: #000;
 }
 .theme--theme1 .message-right .media-body:after {
-  border-left-color: #ffdead;
+  border-left-color: #fff;
 }
 .theme--theme1 .message-left .media-body {
-  background-color: #f0fff0;
-  border: 1px solid #b4eeb4;
+  background-color: #fff;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.07);
+  overflow: visible;
+  color: #000;
 }
 .theme--theme1 .message-left .date:after {
-  border-right-color: #f0fff0;
+  border-right-color: #fff;
 }
 .theme--theme1__icon i {
   color: #ffdead;
@@ -441,34 +446,6 @@ left-menu {
   }
 }
 
-.search {
-  border: 1px solid #ddd;
-  padding: 10px 0;
-  position: fixed;
-  top: 50;
-  left: 0;
-  right: 0;
-  background: #fff;
-  z-index: 99999;
-  box-shadow: 0 9px 11px -5px rgba(0,0,0,0.2), 0 18px 28px 2px rgba(0,0,0,0.14), 0 7px 34px 6px rgba(0,0,0,0.12);
-}
-.search__result {
-  padding: 5px 10px;
-  cursor: pointer;
-}
-.search__result:hover {
-  background: #eee;
-}
-.mess__info {
-  margin-right: 15px;
-}
-.search__close {
-  font-size: 18px;
-  position: absolute;
-  top: 10;
-  right: 10;
-}
-
 main-header {
   display: block;
   position: fixed;
@@ -525,6 +502,34 @@ main-header .navbar {
 }
 a.main-header__profile {
   padding: 7px !important;
+}
+
+.search {
+  border: 1px solid #ddd;
+  padding: 10px 0;
+  position: fixed;
+  top: 50;
+  left: 0;
+  right: 0;
+  background: #fff;
+  z-index: 99999;
+  box-shadow: 0 9px 11px -5px rgba(0,0,0,0.2), 0 18px 28px 2px rgba(0,0,0,0.14), 0 7px 34px 6px rgba(0,0,0,0.12);
+}
+.search__result {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.search__result:hover {
+  background: #eee;
+}
+.mess__info {
+  margin-right: 15px;
+}
+.search__close {
+  font-size: 18px;
+  position: absolute;
+  top: 10;
+  right: 10;
 }
 
 sotr {
@@ -598,7 +603,7 @@ ticket {
   display: inline-block;
   width: 128px;
   height: 175px;
-  background: url("http://petzilla.ru/sites/default/files/styles/large/public/field/image/poroda-britanec.jpg") 100% 100% no-repeat;
+  background: url("http://cdn.grumpycats.com/wp-content/uploads/2016/02/12654647_974282002607537_7798179861389974677_n-758x758.jpg") 100% 100% no-repeat;
   background-size: cover;
   background-position: center;
   border-radius: 3px;
@@ -702,6 +707,8 @@ ticket {
           flex: 1;
   overflow-y: auto;
   padding: 40px 15px 15px;
+  background-color: #f0f0f0;
+  background-image: url("/img/msg_bg_3.png");
 }
 .chat-message {
   max-width: 80%;
@@ -720,13 +727,13 @@ ticket {
   padding: 10px;
   border-radius: 10px;
   font-size: 12px;
-  border: 2px solid #ddd;
-  background: #eee;
 }
 .message-note .media-body {
   width: 1000000px;
-  background: #eee;
   min-width: auto;
+}
+.message-note .media-left {
+  vertical-align: middle;
 }
 .message-right {
   float: right;
@@ -771,7 +778,7 @@ ticket {
   display: inline-block;
   margin-right: 10px;
   margin-top: 10px;
-  background: url("http://petzilla.ru/sites/default/files/styles/large/public/field/image/poroda-britanec.jpg") 100% 100% no-repeat;
+  background: url("http://cdn.grumpycats.com/wp-content/uploads/2016/02/12654647_974282002607537_7798179861389974677_n-758x758.jpg") 100% 100% no-repeat;
   background-size: cover;
   border: 1px solid #ddd;
 }
