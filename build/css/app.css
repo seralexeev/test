@@ -446,6 +446,34 @@ left-menu {
   }
 }
 
+.search {
+  border: 1px solid #ddd;
+  padding: 10px 0;
+  position: fixed;
+  top: 50;
+  left: 0;
+  right: 0;
+  background: #fff;
+  z-index: 99999;
+  box-shadow: 0 9px 11px -5px rgba(0,0,0,0.2), 0 18px 28px 2px rgba(0,0,0,0.14), 0 7px 34px 6px rgba(0,0,0,0.12);
+}
+.search__result {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.search__result:hover {
+  background: #eee;
+}
+.mess__info {
+  margin-right: 15px;
+}
+.search__close {
+  font-size: 18px;
+  position: absolute;
+  top: 10;
+  right: 10;
+}
+
 main-header {
   display: block;
   position: fixed;
@@ -502,34 +530,6 @@ main-header .navbar {
 }
 a.main-header__profile {
   padding: 7px !important;
-}
-
-.search {
-  border: 1px solid #ddd;
-  padding: 10px 0;
-  position: fixed;
-  top: 50;
-  left: 0;
-  right: 0;
-  background: #fff;
-  z-index: 99999;
-  box-shadow: 0 9px 11px -5px rgba(0,0,0,0.2), 0 18px 28px 2px rgba(0,0,0,0.14), 0 7px 34px 6px rgba(0,0,0,0.12);
-}
-.search__result {
-  padding: 5px 10px;
-  cursor: pointer;
-}
-.search__result:hover {
-  background: #eee;
-}
-.mess__info {
-  margin-right: 15px;
-}
-.search__close {
-  font-size: 18px;
-  position: absolute;
-  top: 10;
-  right: 10;
 }
 
 sotr {
@@ -728,8 +728,7 @@ ticket {
   border-radius: 10px;
   font-size: 12px;
   max-width: 100%;
-  background-color: #bebebe;
-  background: rgba(0,0,0,0.1);
+  background: rgba(0,190,255,0.15);
   color: #000;
 }
 .message-note .media-body {
